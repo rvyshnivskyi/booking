@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Search Result Hotel Names Test Case" verbose="1">
+    <listeners>
+        <listener class-name="com.vyshnivskyi.booking.infrastructure.listeners.BaseListener" />
+    </listeners>
+
+    <test name="Search Result Hotel Names Test Case">
+        <parameter name="address" value="New York City"/>
+        <parameter name="checkInDate(yyyy-mm-dd)" value="2017-09-20"/>
+        <parameter name="checkOutDate(yyyy-mm-dd)" value="2017-09-25"/>
+        <classes>
+            <class name="base.HotelSearchTestCases.BookingSearchTestSuite">
+                <methods>
+                    <include name="testSearchResultHotelsNames"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <parameter name="steps"
+               value="Search Result Hotel Names Test Case. Test for checking that hotels names from searching result list equal to hotels names from hotels information pages.
+               Test Steps:
+                   1. Open booking search page;
+                   2. Input incoming for searching data;
+                   3. Search hotels;
+                   4. Open each hotel information page;
+                   5. Check that hotel name from hotel information page is the same as from searching hotel result list.
+               "/>
+</suite>
